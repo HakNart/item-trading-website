@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen Equipment Trading</title>
+    <!-- <link rel="stylesheet" href="./styles/normalize.css"> -->
+    <link rel="stylesheet" href="/styles/main.css">
+    
+</head>
+<body class="flex justify-between flex-col min-h-screen m-0">
+    
+    <header>
+        <div class="navbar bg-primary-focus text-primary-content">
+            <div class="flex-1 h-16">
+                <a href="/" class="logo-image right-header h-full">
+                    <img class="h-full " src="/assets/brandlogo.png" alt="Logo image">
+                </a>
+                
+            </div>
+            <nav class="flex-none">
+                <ul class="menu menu-horizontal px-1">
+                    <li><a href="/trades/new">Start Trading!</a></li>
+                    <%if(!user) {%>
+                    <li><a href="/users/login">Login</a></li>
+                    <li><a href="/users/new">Sign up</a></li>
+                    <%} else {%>
+                    <li><a href="/users/profile">Profile</a></li>
+                    <li><a href="/users/logout">Logout</a></li>
+                    <%}%>
+                </ul>
+               
+            </nav> 
+        </div>
+        <nav class="navbar bg-primary text-primary-content">
+            <ul class="menu menu-horizontal ">
+                <li><a href="/trades">Trades</a></li>
+            </ul>
+            
+        </nav>
+        <% if(errorMessages.length > 0) {%>
+            <% errorMessages.forEach(message=>{%>
+                <div class="alert alert-error shadow-lg ">
+                    <div>
+                    <span ><%=message%></span>
+                    </div>
+                </div>
+
+                <%});%>
+                    <%}%>
+        
+        <% if(successMessages.length > 0) {%>
+    
+            <% successMessages.forEach(message=>{%>
+                <div class="alert alert-success shadow-lg ">
+                    <div>
+                        <span ><%=message%></span>
+                    </div>
+                </div>
+                <%});%>
+                    <%}%>
+            
+    </header>
+    

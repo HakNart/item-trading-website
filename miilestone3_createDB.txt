@@ -1,0 +1,69 @@
+use tradeSite
+
+
+db.items.drop()
+
+
+db.createCollection("items")
+
+
+db.items.insertMany([
+  {
+    itemName: "KitchenAid Artisan Series 5",
+    itemCategory: "Kitchen Appliances",
+    detail: "The KitchenAid Artisan Series 5 is the ultimate kitchen appliance, featuring a powerful 325-watt motor, 10-speed settings, and a tilt-head design for easy access to the mixing bowl. With a generous 5-quart capacity stainless steel bowl, this stand mixer can handle all your mixing, kneading, and whipping needs. Plus, with optional attachments like a pasta maker and food grinder, it's a versatile tool that can tackle any recipe. Available in a variety of vibrant colors, the KitchenAid Artisan Series 5 is sure to be a stylish and functional addition to your kitchen.",
+
+    itemCondition: "Like New",
+    imageURL: "/assets/appliances_kitchenaid_mixer.jpg",
+
+  },
+  {
+
+    itemName: "Phillips Fryer",
+    itemCategory: "Kitchen Appliances",
+    detail: "Introducing the Phillips Fryer, the perfect appliance for crispy and delicious fried foods in the comfort of your own home. With its innovative Rapid Air Technology, this fryer circulates hot air around your food to ensure even cooking and crispy results every time. Its adjustable temperature control lets you fry, bake, grill, or roast your favorite foods with ease, and its non-stick cooking surface makes cleanup a breeze. Compact and stylish, the Phillips Fryer is the perfect addition to any kitchen.",
+
+    itemCondition: "Used",
+    imageURL: "/assets/appliances_phillips_fryer.jpg",
+
+  },
+  {
+
+    itemName: "Delonghi CoffeeMaker",
+    itemCategory: "Kitchen Appliances",
+    detail: "Introducing the Delonghi CoffeeMaker, the perfect appliance for coffee lovers who want to enjoy a delicious cup of coffee at home. With its advanced brewing technology, this coffee maker ensures the perfect brew every time. Its easy-to-use control panel allows you to customize your coffee just the way you like it, and its programmable timer lets you wake up to the aroma of freshly brewed coffee. The Delonghi CoffeeMaker also features a sleek and stylish design that will complement any kitchen decor. With its durable construction and reliable performance, the Delonghi CoffeeMaker is the perfect addition to any coffee lover's kitchen.",
+
+    itemCondition: "Like New",
+    imageURL: "/assets/appliances_delonghi_coffeemaker.jpg",
+
+  },
+  {
+
+    itemName: "Measuring Spoon",
+    itemCategory: "Kitchen Tools",
+    detail: "Introducing our high-quality measuring spoons, the perfect addition to any kitchen. Made from durable stainless steel, these measuring spoons are built to last and won't rust or corrode over time. Each spoon is clearly labeled with both standard and metric measurements, ensuring accuracy in all your recipes. The flat base of each spoon allows for easy and stable measuring, and the spoons nest neatly together for compact storage. With their sleek and modern design, these measuring spoons are not only functional, but also a stylish accessory for any kitchen. Upgrade your measuring game with our durable and precise measuring spoons today.",
+
+    itemCondition: "New",
+    imageURL: "/assets/tools_measuringspoons.jpg",
+
+  },
+  {
+
+    itemName: "Pyrex Measuring Cups",
+    itemCategory: "Kitchen Tools",
+    detail: "Introducing Pyrex Measuring Cups, the ultimate kitchen essential for any home cook or baker. Made from durable tempered glass, these measuring cups are resistant to heat, stains, and odors, ensuring their longevity in your kitchen. The clear glass design allows for easy and accurate measuring of both wet and dry ingredients, and the easy-to-read markings are in both standard and metric measurements. Plus, the comfortable handle and spout make pouring and transferring ingredients a breeze. These measuring cups are also dishwasher safe for easy cleaning and are stackable for convenient storage. Upgrade your kitchen with the reliable and versatile Pyrex Measuring Cups today.",
+
+    itemCondition: "Used",
+    imageURL: "/assets/tools_pyrex_measuringcups.jpg",
+  },
+  {
+
+    itemName: "Spatula",
+    itemCategory: "Kitchen Tools",
+    detail: "ntroducing our high-quality spatula, the perfect tool for all your cooking and baking needs. Made from durable and heat-resistant materials, this spatula can handle high temperatures without warping or melting. The non-stick surface ensures easy food release and makes cleanup a breeze. The sturdy handle provides a comfortable and secure grip, and the flexible head easily glides under food to flip, turn, or lift with precision. This versatile spatula is suitable for use with all types of cookware, and the sleek and modern design makes it a stylish addition to any kitchen. Whether you're cooking up a storm or whipping up a batch of cookies, our spatula will quickly become your go-to tool in the kitchen.",
+
+    itemCondition: "Used",
+    imageURL: "/assets/tools_spatula.jpg",
+
+  }
+])

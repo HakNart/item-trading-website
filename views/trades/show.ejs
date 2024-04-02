@@ -1,0 +1,28 @@
+<%- include('../partials/header.ejs') %>
+<main class="py-4">
+  <section>
+    <div
+      class="card max-w-3xl bg-secondary text-secondary-content shadow-xl mx-auto max-h-fit"
+    >
+      <figure class=""><img class="w-full" src="<%=item.imageURL%>" alt="item image" ></figure>
+      <div class="card-body ">
+        <h2 class="card-title"><%=item.itemName%></h2>
+        <p class="badge badge-info badge-xs"><%=item.itemCondition%></p>
+        <p><%=item.detail%></p>
+        <div class="card-actions justify-between">
+          <%if(user == item.owner._id) {%>
+          <form class="card-actions">
+            <button class="btn btn-success" formmethod="GET" formaction="/trades/<%=item._id%>/update">Edit</button>
+            <button class="btn btn-error" formmethod="POST" formaction="/trades/<%=item._id%>?_method=DELETE" >Delete</button>
+          </form>
+          <%}%>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary">Trade</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+</main>
+<%- include('../partials/footer.ejs') %>

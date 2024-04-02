@@ -1,0 +1,37 @@
+<%- include('../partials/header.ejs') %>   
+    <main class="py-4">
+        <form class="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-base-200 mx-auto text-base-content" action="/users" method="POST"> 
+            <div class="card-body">
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">First Name</span>
+                </label>
+                <input name="firstName" type="text" placeholder="first name" class="input input-bordered" required/>
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Last Name</span>
+                </label>
+                <input name="lastName" type="text" placeholder="last Name" class="input input-bordered" required/>
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Email</span>
+                </label>
+                <input name="email" type="text" placeholder="email" class="input input-bordered"  required/>
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Password</span>
+                </label>
+                <input name="password" type="password" placeholder="password" class="input input-bordered" minlength="7" required/>
+              </div>
+              <div class="form-control mt-6">
+                <button class="btn btn-primary">Sign Up</button>
+              </div>
+            </div>
+
+        </form>
+        
+    </main>
+<%- include('../partials/footer.ejs') %>

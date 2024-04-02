@@ -1,0 +1,76 @@
+<%- include('../partials/header.ejs') %>
+<main class="py-4 flex-auto">
+  <section class="user-profile flex flex-col items-center">
+    <div class="card w-96 bg-base-100 shadow-xl mb-4">
+      <div class="card-body">
+        <h2 class="card-title"><%=user.firstName + ' ' + user.lastName%></h2>
+        <p>Here is the list of your items to trade:</p>
+      </div>
+    </div>
+
+    <%if(items.length) { %>
+    <div class="overflow-x-auto w-full">
+      <table class="table table-compact w-full">
+        <!-- head -->
+        <thead>
+          <tr>
+            <th></th>
+            <th>Item name</th>
+            <th>Category</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%items.forEach(item => {%>
+          <tr>
+            <td>
+              <div class="flex items-center space-x-3">
+                <div class="avatar">
+                  <div class="mask mask-squircle w-12 h-12">
+                    <img src="<%=item.imageURL%>" alt="Item image" />
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <%=item.itemName%>
+              <br />
+              <span class="badge badge-info badge-sm"
+                ><%=item.itemCondition%></span
+              >
+            </td>
+            <td><%=item.itemCategory%></td>
+            <th>
+              <form>
+                <button
+                  class="btn btn-success btn-sm"
+                  formmethod="GET"
+                  formaction="/trades/<%=item._id%>/update"
+                >
+                  Edit
+                </button>
+                <button
+                  class="btn btn-error btn-sm"
+                  formmethod="POST"
+                  formaction="/trades/<%=item._id%>?_method=DELETE"
+                >
+                  Delete
+                </button>
+              </form>
+            </th>
+          </tr>
+          <%})%>
+        </tbody>
+      </table>
+    </div>
+    <%} else { %>
+    <div class="card w-96 bg-base-100 shadow-xl">
+      <div class="card-body">
+        <p>You have not created any items yet</p>
+      </div>
+    </div>
+
+    <%}%>
+  </section>
+</main>
+<%- include('../partials/footer.ejs') %>

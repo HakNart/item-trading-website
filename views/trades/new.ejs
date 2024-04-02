@@ -1,0 +1,59 @@
+<%- include('../partials/header.ejs') %>   
+    <main class="py-4">
+        <form class="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-base-200 mx-auto text-base-content" action="/trades" method="POST">
+            <div class="card-body">
+                <div class="form-control">
+                    <label class="label" for="category">
+                        <span class="label-text">Category</span>
+                    </label>
+                    <input class="input input-bordered" type="text" id="category" name="itemCategory" required>
+                </div>
+                <div class="form-control">
+                    <label class="'label" for="prod-name">
+                        <span class="label-text">Item name</span>
+                    </label>
+                    <input class="input input-bordered" type="text" id="prod-name" name="itemName" required>
+                </div>
+
+                <div class="form-control">
+                    <label class="label" for="item-condition">
+                      <span class="label-text">Item Condition</span>
+                    </label>
+                    <div class="flex">
+                      <label class="label">
+                        <input type="radio" name="itemCondition" value="New" class="radio radio-primary" required>
+                        <span class="label-text">New</span>
+                      </label>
+                      <label class="label">
+                        <input type="radio" name="itemCondition" value="Like New" class="radio radio-primary" required>
+                        <span class="label-text">Like New</span>
+                      </label>
+                      <label class="label">
+                        <input type="radio" name="itemCondition" value="Used" class="radio radio-primary" required>
+                        <span class="label-text">Used</span>
+                      </label>
+                    </div>
+                  </div>
+                  
+                <div class="form-control">
+                    <label class="'label" for="detail">
+                        <span class="label-text">Item Detail</span>
+                    </label>
+                    <textarea class="textarea textarea-bordered" name="detail" id="detail" cols="30" rows="10" required minlength=10></textarea>
+                </div>
+                <div class="form-control">
+                    <label class="'label" for="item-imageURL">
+                        <span class="label-text">Item Image URL</span>
+                    </label>
+                    <input class="input input-bordered" type="text" id="item-imageURL" name="imageURL" value="/assets/appliances_kitchenaid_mixer.jpg" required>
+                </div>
+
+                <div class="card-actions justify-start">
+                    <button class="btn btn-primary bg-accent" type="submit">Create Trade Item</button>
+                </div>
+            
+            </div>
+        </form>
+        
+    </main>
+<%- include('../partials/footer.ejs') %>

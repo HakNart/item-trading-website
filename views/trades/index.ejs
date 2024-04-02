@@ -1,0 +1,29 @@
+<%- include('../partials/header.ejs') %>
+<main>
+  <% if (sortedItems.length) { %> <% sortedItems.forEach(itemGroup => { %>
+  <section class="mx-4 my-4 bg-base-300 text-base-content">
+    <h4 class="text-xl font-bold my-2 text-secondary-focus"><%= itemGroup.category %></h4>
+    <div class="flex gap-4">
+      <% itemGroup.items.forEach(item => { %>
+      <div class="card  w-96 bg-base-200 shadow-lg">
+        <figure class="h-[80%]"><img class="w-full h-full object-fill" src="<%=item.imageURL %>" alt="item image"></figure>
+        <div class="card-body">
+          <div class="card-title">
+            <h2><%=item.itemName%></h2>
+
+          </div>
+
+          <div class="card-actions justify-end">
+            <a class="btn btn-info" href="trades/<%=item._id%>">View</a>
+          </div>
+        </div>
+      </div>
+      <%})%>
+    </div>
+  </section>
+
+  <%})%> <%} else {%>
+  <p>There is no item to display.</p>
+  <%}%>
+</main>
+<%- include('../partials/footer.ejs') %>
